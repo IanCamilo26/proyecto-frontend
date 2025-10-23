@@ -1,0 +1,1 @@
+window.API_BASE = "http://backend:8000/api";
