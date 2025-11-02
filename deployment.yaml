@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: 617315822143.dkr.ecr.us-east-1.amazonaws.com/proyecto-frontend:lastest
+          image: 617315822143.dkr.ecr.us-east-1.amazonaws.com/proyecto-frontend:latest
           ports:
             - containerPort: 80
           env:
