@@ -4,15 +4,16 @@ metadata:
   name: frontend-ingress
   namespace: frontend
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    #nginx.ingress.kubernetes.io/rewrite-target: /
     cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
-  tls:
-    - hosts:
-        - frontend.tu-dominio.com
-      secretName: frontend-tls
+  ingressClassName: nginx
+  #tls: Como estoy usando el DNS del NLB, no puedo tener un certificado valido. Para pruebas solo de HTTP no hace falta este bloque.
+  #  - hosts:
+  #      - frontend.tu-dominio.com
+  #    secretName: frontend-tls
   rules:
-    - host: frontend.tu-dominio.com
+    - host: proyecto-final-nlb-6ef941fb7e9e8d09.elb.us-east-1.amazonaws.com
       http:
         paths:
           - path: /
@@ -22,3 +23,10 @@ spec:
                 name: frontend-service
                 port:
                   number: 80
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: users-api-service
+                port:
+                  number: 8000
