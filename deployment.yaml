@@ -17,7 +17,8 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: 617315822143.dkr.ecr.us-east-1.amazonaws.com/proyecto-frontend:latest
+          image: 912119905922.dkr.ecr.us-east-1.amazonaws.com/proyecto-frontend:v3
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
           env:
@@ -32,6 +33,12 @@ spec:
               port: 80
             initialDelaySeconds: 5
             periodSeconds: 10
+          livenessProbe:  # ← AGREGAR ESTO
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 15
+            periodSeconds: 20
           resources:
             requests:
               cpu: "100m"

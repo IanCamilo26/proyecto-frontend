@@ -1,1 +1,1 @@
-window.API_BASE = "http://backend:8000/api";
+window.API_BASE = "https://p5zd4xx8te.execute-api.us-east-1.amazonaws.com/prod/api";

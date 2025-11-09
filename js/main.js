@@ -1,5 +1,5 @@
 // Ajustá esta URL al host/puerto donde esté tu backend
-const API_BASE = "http://127.0.0.1:8000/api";
+const API_BASE = 'https://p5zd4xx8te.execute-api.us-east-1.amazonaws.com/prod/api';
 const USERS_ENDPOINT = `${API_BASE}/users/`;
 
 const form = document.getElementById("userForm");

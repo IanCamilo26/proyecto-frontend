@@ -4,4 +4,5 @@ metadata:
   name: frontend-config
   namespace: frontend
 data:
-  api_base: http://users-api-service:8000/api
+  # Temporalmente apunta al servicio interno (para pruebas)
+  api_base: "https://p5zd4xx8te.execute-api.us-east-1.amazonaws.com/prod" # Debe apuntar a la URL del API Gateway en la version final (después de crear el LoadBalancer y API Gateway)
