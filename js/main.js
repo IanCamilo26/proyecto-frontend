@@ -1,3 +1,8 @@
+// Forzar HTTPS - Redirigir automáticamente si se accede por HTTP
+if (window.location.protocol === 'http:') {
+    window.location.href = window.location.href.replace('http:', 'https:');
+}
+
 // Ajustá esta URL al host/puerto donde esté tu backend
 const API_BASE = 'https://p5zd4xx8te.execute-api.us-east-1.amazonaws.com/prod/api';
 const USERS_ENDPOINT = `${API_BASE}/users/`;
